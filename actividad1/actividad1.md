@@ -36,3 +36,19 @@ Tipo mas pequeño de kernel. Consta soamente de miles de lineas de codigo (peque
 <p align="center"><img src="../img/actividad1/exokernel.jpg" width="300" height="300"/></p>
 
 Tiene proteccion y gestion de recursos por separado. Es adecuado para cuando se hace un personalizacion en una aplicacion. Se usan mas en ambitos como dispositivos moviles. Es como un microkernel pero con caracteristicas especificamente para dispositivos moviles.
+
+User vs Kernel Mode
+=======
+
+## Modo de Usuario
+Es cuando un progrma se inicia en un sistema operativo, por ejemplo cuando Windows se encarga de crear un espacion de direcciones virtuales para un proceso en especifico.En este modo los programas son menos prvilegiados y no se les permite acceder directamente a recursos del sistema, primero pasa por el sistema operativo mediante syscalls.
+
+## Modo Nucleo o Kernel
+El kernel es el progrmaa central en el que se basan todos los demas componentes del sistema operativo. Se usa para acceder a componentes de hardware y programar procesos que deben ejecutardse en el sistema. Gestiona la interaccion del software y hardware de la aplicacion. Por lo tanto es el programa mas privilegiado a diferencia de otros. Cuando un programa que se ejecuta en modo usuario necesita acceso de hardware por ejemplo camara web, primero pasa por el kernel usando una pantalla del sistema. 
+
+| Criterios        | Modo Kernel           | Modo Usuario  |
+| ------------- |:-------------:| -----:|
+| Versus | El programa tiene acceso directo y sin restricciones a los recursos del sistema | Se ejececuta y se inicia el programa. |
+| Interrupciones      | Todo el sistema podria fallar si se produce una interrupcion.      |   Un solo proceso falla si ocurre una falla. |
+| Modos | Tambien se le conoce como modo maestro, modo privilegiado o modo de sistema.      | Tambien se le conoce como modo privilegiado, restringido o esclavo. |
+| Espacio de direccion virtual | Los procesos comparten un solo espacio de direccion virtual      |    Todos los procesos obtienen espacio de una direccion virtual separada. |
